@@ -10,7 +10,7 @@ class Command(object):
             print "Error: '{0}' could not be executed".format(self.command_string)
 
     def __str__(self):
-        print self.command_str
+        return self.command_str
 
 class CommandManager(object):
     # The constructor sets up the command list,
@@ -34,4 +34,5 @@ class CommandManager(object):
     # I have to define the help command here to avoid scope issues with the command dictionary, hope to change this in the future
     def HelpCommand(self, args):
         print "The commands currently availabel: "
-        print self.command_list
+        for command in self.command_list:
+            print command
